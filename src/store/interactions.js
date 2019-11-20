@@ -168,10 +168,12 @@ export const loadBalances = async (
   dispatch(tokenBalanceLoaded(tokenBalance));
 
   // Ether balance in exchange
-  const exchangeEtherBalance = await exchange.methods
-    .balanceOf(ETHER_ADDRESS, account)
-    .call();
-  dispatch(exchangeEtherBalanceLoaded(exchangeEtherBalance));
+  // const exchangeEtherBalance = await exchange.methods
+  //   .balanceOf(ETHER_ADDRESS, account)
+  //   .call();
+  dispatch(exchangeEtherBalanceLoaded("0"));
+
+  console.log("token: ", token);
 
   // Token balance in exchange
   const exchangeTokenBalance = await exchange.methods

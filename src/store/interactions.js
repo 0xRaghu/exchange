@@ -159,26 +159,26 @@ export const loadBalances = async (
   account
 ) => {
   // Ether balance in wallet
-  console.log("account: ", account);
-  const etherBalance = await web3.eth.getBalance(account);
+  // console.log("account: ", account);
+  // const etherBalance = await web3.eth.getBalance(account);
   dispatch(etherBalanceLoaded("0"));
 
   // Token balance in wallet
-  const tokenBalance = await token.methods.balanceOf(account).call();
+  // const tokenBalance = await token.methods.balanceOf(account).call();
   dispatch(tokenBalanceLoaded("0"));
 
   // Ether balance in exchange
-  const exchangeEtherBalance = await exchange.methods
-    .balanceOf(ETHER_ADDRESS, account)
-    .call();
+  // const exchangeEtherBalance = await exchange.methods
+  //   .balanceOf(ETHER_ADDRESS, account)
+  //   .call();
   dispatch(exchangeEtherBalanceLoaded("0"));
 
-  console.log("token: ", token);
+  // console.log("token: ", token);
 
   // Token balance in exchange
-  const exchangeTokenBalance = await exchange.methods
-    .balanceOf(token.options.address, account)
-    .call();
+  // const exchangeTokenBalance = await exchange.methods
+  //   .balanceOf(token.options.address, account)
+  //   .call();
   dispatch(exchangeTokenBalanceLoaded("0"));
 
   // Trigger all balances loaded
